@@ -2,106 +2,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wall Hooks - TrendKartIndia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <title>TrendKart - Wall Hooks</title>
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f8f8f8;
-      color: #333;
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      animation: fadeIn 1s ease-in;
+      padding: 0;
+      background: #f5f5f5;
     }
     header {
+      background-color: #232f3e;
+      color: white;
+      padding: 1rem;
       text-align: center;
-      margin-bottom: 20px;
     }
-    header h1 {
-      font-size: 24px;
-      color: #222;
-    }
-    .product-img {
-      width: 100%;
-      height: auto;
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
-      animation: slideIn 1s ease-out;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .carousel {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .carousel-images {
+      display: flex;
+      width: 300%;
+      animation: slide 10s infinite;
+    }
+    .carousel-images img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0%); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .price {
-      font-size: 20px;
+      color: #b12704;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .savings {
       color: green;
-      margin: 10px 0;
-    }
-    .form {
-      display: flex;
-      flex-direction: column;
-    }
-    .form input, .form select, .form textarea {
-      margin: 10px 0;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      font-size: 1rem;
     }
     .btn {
       background-color: #ff9900;
-      color: white;
-      padding: 12px;
+      color: black;
+      padding: 0.8rem 1.2rem;
       border: none;
-      border-radius: 5px;
+      font-size: 1.1rem;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      margin-top: 1rem;
+      border-radius: 5px;
+      display: inline-block;
     }
     .btn:hover {
       background-color: #e68a00;
     }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, select, textarea {
+      padding: 0.6rem;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
     footer {
       text-align: center;
-      font-size: 14px;
-      margin-top: 20px;
-      color: #777;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slideIn {
-      from { transform: translateY(-20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      padding: 1rem;
+      background: #232f3e;
+      color: white;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>TrendKart Wall Hooks Combo</h1>
+  </header>
   <div class="container">
-    <header>
-      <h1>20 Wall Hooks + 10 Screw Hooks – Easy to Use, No Drilling!</h1>
-    </header>
-    <img class="product-img" src="https://via.placeholder.com/800x400" alt="Wall Hooks" />
-    <p class="price">Just ₹75 Prepaid (Save ₹24) | ₹99 Cash on Delivery</p>
-    <p>Strong adhesive wall hooks perfect for kitchen, bathroom, or study. Easy to install, no damage to walls. Stock is limited, order now!</p>
-    <p><strong>Pay ₹75 via UPI to:</strong> yourupi@paytm<br/>
-    Upload payment screenshot below if prepaid.</p>
-    <form class="form" action="https://formspree.io/f/YOUR_ID" method="POST">
-      <input type="text" name="name" placeholder="Full Name" required />
-      <input type="text" name="address" placeholder="Full Address with Pincode" required />
-      <input type="tel" name="phone" placeholder="Phone Number" required />
-      <input type="number" name="quantity" placeholder="Quantity" min="1" required />
-      <select name="payment_option" required>
-        <option value="prepaid">Prepaid</option>
-        <option value="cod">Cash on Delivery</option>
+    <div class="carousel">
+      <div class="carousel-images">
+        <img src="image1.jpg" alt="Wall Hook Image 1">
+        <img src="image2.jpg" alt="Wall Hook Image 2">
+        <img src="image3.jpg" alt="Wall Hook Image 3">
+      </div>
+    </div>
+    <p><strong>Pack:</strong> 10 Wall Hooks + 10 Screw Hooks</p>
+    <p class="price">₹75 Prepaid <span class="savings">(Save ₹24)</span></p>
+    <p>₹99 Cash on Delivery</p>
+    <p><strong>Limited Stock Available!</strong> Grab yours before it’s gone.</p>
+    <form action="https://formspree.io/f/your-id" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <input type="text" name="address" placeholder="Full Address" required>
+      <select name="payment">
+        <option value="Prepaid">Prepaid - ₹75</option>
+        <option value="COD">Cash on Delivery - ₹99</option>
       </select>
-      <input type="file" name="screenshot" accept="image/*" />
+      <textarea name="notes" placeholder="Any special request (optional)"></textarea>
       <button class="btn" type="submit">Order Now</button>
     </form>
-    <footer>
-      <p>Follow us on Instagram: <a href="https://instagram.com/trendkartindia18" target="_blank">@trendkartindia18</a></p>
-      <p>For help, contact on WhatsApp: +91-XXXXXXXXXX</p>
-    </footer>
+    <p>📲 For any queries, WhatsApp us: <a href="https://wa.me/91XXXXXXXXXX">Click Here</a></p>
+    <p>Follow us on Instagram: <a href="https://instagram.com/trendkartindia18">@trendkartindia18</a></p>
   </div>
+  <footer>
+    &copy; 2025 TrendKart. All rights reserved.
+  </footer>
 </body>
 </html>
