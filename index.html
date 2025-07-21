@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -83,6 +84,9 @@
       border-radius: 5px;
       border: 1px solid #ccc;
     }
+    #screenshot-field {
+      display: none;
+    }
     footer {
       text-align: center;
       padding: 1rem;
@@ -108,22 +112,41 @@
     <p class="price">₹75 Prepaid <span class="savings">(Save ₹24)</span></p>
     <p>₹99 Cash on Delivery</p>
     <p><strong>Limited Stock Available!</strong> Grab yours before it’s gone.</p>
-    <form action="https://formspree.io/f/your-id" method="POST">
+    
+    <form action="https://formspree.io/f/your-id" method="POST" enctype="multipart/form-data">
       <input type="text" name="name" placeholder="Full Name" required>
       <input type="tel" name="phone" placeholder="Phone Number" required>
       <input type="text" name="address" placeholder="Full Address" required>
-      <select name="payment">
+      <select name="payment" id="payment-method" onchange="toggleScreenshotField()">
         <option value="Prepaid">Prepaid - ₹75</option>
         <option value="COD">Cash on Delivery - ₹99</option>
       </select>
+      <div id="screenshot-field">
+        <label>Upload Screenshot of Payment:</label>
+        <input type="file" name="payment_screenshot" accept="image/*">
+      </div>
       <textarea name="notes" placeholder="Any special request (optional)"></textarea>
       <button class="btn" type="submit">Order Now</button>
     </form>
+
     <p>📲 For any queries, WhatsApp us: <a href="https://wa.me/91XXXXXXXXXX">Click Here</a></p>
     <p>Follow us on Instagram: <a href="https://instagram.com/trendkartindia18">@trendkartindia18</a></p>
   </div>
   <footer>
     &copy; 2025 TrendKart. All rights reserved.
   </footer>
+
+  <script>
+    function toggleScreenshotField() {
+      const paymentMethod = document.getElementById('payment-method').value;
+      const screenshotField = document.getElementById('screenshot-field');
+      if (paymentMethod === 'Prepaid') {
+        screenshotField.style.display = 'block';
+      } else {
+        screenshotField.style.display = 'none';
+      }
+    }
+    window.onload = toggleScreenshotField; // Ensure it runs on page load
+  </script>
 </body>
 </html>
