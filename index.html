@@ -144,21 +144,37 @@
 <p>Or ₹99 <strong>Cash on Delivery</strong></p>
 <p><strong>🕒 Hurry!</strong> Limited stock left – order now.</p>
 
-<form action="https://formspree.io/f/your-id" method="POST" enctype="multipart/form-data">
+<form name="order" method="POST" data-netlify="true" enctype="multipart/form-data" netlify-honeypot="bot-field">
+  <!-- Hidden fields required for Netlify Forms -->
+  <input type="hidden" name="form-name" value="order" />
+  <input type="hidden" name="bot-field" />
+
   <input type="text" name="name" placeholder="🧍 Full Name" required>
   <input type="tel" name="phone" placeholder="📞 Phone Number" required>
   <input type="text" name="address" placeholder="🏠 Full Address" required>
-  <select name="payment" id="payment-method" onchange="toggleScreenshotField()">
+
+  <select name="payment" id="payment-method" onchange="toggleScreenshotField()" required>
+    <option value="">Select Payment Method</option>
     <option value="Prepaid">Prepaid - ₹75</option>
     <option value="COD">Cash on Delivery - ₹99</option>
   </select>
-  <div id="screenshot-field">
+
+  <div id="screenshot-field" style="display: none;">
     <label>Upload Screenshot of UPI Payment:</label>
     <input type="file" name="payment_screenshot" accept="image/*">
   </div>
+
   <textarea name="notes" placeholder="📝 Any special request (optional)"></textarea>
   <button class="btn" type="submit">Place My Order</button>
 </form>
+
+<script>
+  function toggleScreenshotField() {
+    const method = document.getElementById("payment-method").value;
+    const screenshotDiv = document.getElementById("screenshot-field");
+    screenshotDiv.style.display = method === "Prepaid" ? "block" : "none";
+  }
+</script>
 
 <div class="trust-badges">
   <span>🔒 100% Secure Payments</span>
