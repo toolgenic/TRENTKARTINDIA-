@@ -143,7 +143,8 @@
 <p class="price">₹75 Prepaid <span class="savings">(Save ₹24)</span></p>
 <p>Or ₹99 <strong>Cash on Delivery</strong></p>
 <p><strong>🕒 Hurry!</strong> Limited stock left – order now.</p>
-<form name="netflix-order" method="POST" data-netlify="true" enctype="multipart/form-data">
+    <!-- Netlify hidden form for backend recognition -->
+<form name="netflix-order" method="POST" netlify enctype="multipart/form-data" data-netlify="true">
   <input type="text" name="name" placeholder="🧍 Full Name" required>
   <input type="tel" name="phone" placeholder="📞 Phone Number" required>
   <input type="text" name="address" placeholder="🏠 Full Address" required>
