@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TrendKart - Wall Hooks</title>
+  <title>Buy Wall Hooks @ ₹75 - TrendKart</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -24,36 +24,29 @@
       padding: 1.5rem;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
-      animation: fadeIn 1s ease-in-out;
     }
     .carousel {
-      position: relative;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+    }
+    .carousel img {
       width: 100%;
-      overflow: hidden;
+      max-width: 220px;
       border-radius: 10px;
     }
-.carousel-images {
-  display: flex;
-  width: 300%;
-  animation: slide 2s infinite; /* slower */
-}
-    .carousel-images img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    @keyframes slide {
-      0% { transform: translateX(0%); }
-      33% { transform: translateX(-100%); }
-      66% { transform: translateX(-200%); }
-      100% { transform: translateX(0%); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .highlight {
+      background: green;
+      color: white;
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-left: 10px;
+      font-size: 0.9rem;
     }
     .price {
       color: #b12704;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: bold;
     }
     .savings {
@@ -68,8 +61,7 @@
       font-size: 1.1rem;
       cursor: pointer;
       margin-top: 1rem;
-      border-radius: 5px;
-      display: inline-block;
+      border-radius: 6px;
     }
     .btn:hover {
       background-color: #e68a00;
@@ -94,6 +86,44 @@
       color: white;
       margin-top: 2rem;
     }
+    .info-bar {
+      background: #e6f5e6;
+      padding: 10px;
+      border-left: 5px solid green;
+      margin: 1rem 0;
+    }
+    .trust-badges {
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    .trust-badges span {
+      display: inline-block;
+      margin-right: 15px;
+    }
+    .sticky-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      width: 90%;
+      margin: auto;
+      max-width: 700px;
+      background: #ff9900;
+      color: black;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      padding: 1rem;
+      text-align: center;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -102,41 +132,48 @@
   </header>
   <div class="container">
     <div class="carousel">
-      <div class="carousel-images">
-  <img src="images/hook.png" style="width: 120px; height: auto;" alt="Wall Hook Image 1">
-  <img src="images/hook1.jpg" style="width: 120px; height: auto;" alt="Wall Hook Image 2">
-  <img src="images/hook3.jpg" style="width: 120px; height: auto;" alt="Wall Hook Image 3">
-      </div>
-    </div>
-    <p><strong>Pack:</strong> 10 Wall Hooks + 10 Screw Hooks</p>
-    <p class="price">₹75 Prepaid <span class="savings">(Save ₹24)</span></p>
-    <p>₹99 Cash on Delivery</p>
-    <p><strong>Limited Stock Available!</strong> Grab yours before it’s gone.</p>
-    
-    <form action="https://formspree.io/f/your-id" method="POST" enctype="multipart/form-data">
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="tel" name="phone" placeholder="Phone Number" required>
-      <input type="text" name="address" placeholder="Full Address" required>
-      <select name="payment" id="payment-method" onchange="toggleScreenshotField()">
-        <option value="Prepaid">Prepaid - ₹75</option>
-        <option value="COD">Cash on Delivery - ₹99</option>
-      </select>
-      <div id="screenshot-field">
-        <label>Upload Screenshot of Payment:</label>
-        <input type="file" name="payment_screenshot" accept="image/*">
-      </div>
-      <textarea name="notes" placeholder="Any special request (optional)"></textarea>
-      <button class="btn" type="submit">Order Now</button>
-    </form>
+      <img src="images/hook.png" alt="Wall Hook Image 1">
+      <img src="images/hook1.jpg" alt="Wall Hook Image 2">
+      <img src="images/hook3.jpg" alt="Wall Hook Image 3">
+    </div><div class="info-bar">
+  <strong>Pack:</strong> 10 Wall Hooks + 10 Screw Hooks <span class="highlight">Best Seller</span><br>
+  ✅ Strong grip • ✅ Reusable • ✅ No drilling required
+</div>
 
-    <p>📲 For any queries, WhatsApp us: <a href="https://wa.me/91XXXXXXXXXX">Click Here</a></p>
-    <p>Follow us on Instagram: <a href="https://instagram.com/trendkartindia18">@trendkartindia18</a></p>
+<p class="price">₹75 Prepaid <span class="savings">(Save ₹24)</span></p>
+<p>Or ₹99 <strong>Cash on Delivery</strong></p>
+<p><strong>🕒 Hurry!</strong> Limited stock left – order now.</p>
+
+<form action="https://formspree.io/f/your-id" method="POST" enctype="multipart/form-data">
+  <input type="text" name="name" placeholder="🧍 Full Name" required>
+  <input type="tel" name="phone" placeholder="📞 Phone Number" required>
+  <input type="text" name="address" placeholder="🏠 Full Address" required>
+  <select name="payment" id="payment-method" onchange="toggleScreenshotField()">
+    <option value="Prepaid">Prepaid - ₹75</option>
+    <option value="COD">Cash on Delivery - ₹99</option>
+  </select>
+  <div id="screenshot-field">
+    <label>Upload Screenshot of UPI Payment:</label>
+    <input type="file" name="payment_screenshot" accept="image/*">
   </div>
-  <footer>
-    &copy; 2025 TrendKart. All rights reserved.
-  </footer>
+  <textarea name="notes" placeholder="📝 Any special request (optional)"></textarea>
+  <button class="btn" type="submit">Place My Order</button>
+</form>
 
-  <script>
+<div class="trust-badges">
+  <span>🔒 100% Secure Payments</span>
+  <span>🚚 5-7 Days Delivery</span>
+  <span>🇮🇳 Made in India</span>
+</div>
+
+<p>📲 For queries, WhatsApp us: <a href="https://wa.me/91XXXXXXXXXX">Click Here</a></p>
+<p>Follow us on Instagram: <a href="https://instagram.com/trendkartindia18">@trendkartindia18</a></p>
+
+  </div>  <div class="sticky-btn" onclick="document.querySelector('form').scrollIntoView({ behavior: 'smooth' })">
+    🔥 Order Now @ ₹75
+  </div>  <footer>
+    &copy; 2025 TrendKart. All rights reserved.
+  </footer>  <script>
     function toggleScreenshotField() {
       const paymentMethod = document.getElementById('payment-method').value;
       const screenshotField = document.getElementById('screenshot-field');
@@ -146,7 +183,6 @@
         screenshotField.style.display = 'none';
       }
     }
-    window.onload = toggleScreenshotField; // Ensure it runs on page load
-  </script>
-</body>
+    window.onload = toggleScreenshotField;
+  </script></body>
 </html>
