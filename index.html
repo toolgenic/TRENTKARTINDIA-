@@ -144,27 +144,27 @@
 <p>Or ₹99 <strong>Cash on Delivery</strong></p>
 <p><strong>🕒 Hurry!</strong> Limited stock left – order now.</p>
 <form name="netflix-order" method="POST" data-netlify="true" enctype="multipart/form-data">
-  <input type="hidden" name="form-name" value="netflix-order" />
-
-  <input type="text" name="name" placeholder="🧍 Full Name" required />
-  <input type="tel" name="phone" placeholder="📞 Phone Number" required />
-  <input type="text" name="address" placeholder="🏠 Full Address" required />
-
+  <input type="text" name="name" placeholder="🧍 Full Name" required>
+  <input type="tel" name="phone" placeholder="📞 Phone Number" required>
+  <input type="text" name="address" placeholder="🏠 Full Address" required>
+  
   <select name="payment" id="payment-method" onchange="toggleScreenshotField()">
     <option value="Prepaid">Prepaid - ₹75</option>
     <option value="COD">Cash on Delivery - ₹99</option>
   </select>
-
+  
   <div id="screenshot-field">
     <label>Upload Screenshot of UPI Payment:</label>
-    <input type="file" name="payment_screenshot" accept="image/*" />
+    <input type="file" name="payment_screenshot" accept="image/*">
   </div>
-
+  
   <textarea name="notes" placeholder="📝 Any special request (optional)"></textarea>
-
-  <button type="submit">Place My Order</button>
+  
+  <!-- Hidden input to help Netlify identify this form -->
+  <input type="hidden" name="form-name" value="netflix-order">
+  
+  <button class="btn" type="submit">Place My Order</button>
 </form>
-
 <script>
   function toggleScreenshotField() {
     const method = document.getElementById("payment-method").value;
