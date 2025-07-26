@@ -1,7 +1,8 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Buy Wall Hooks @ ₹75 - TrendKart</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
@@ -130,73 +131,84 @@
   <header>
     <h1>TrendKart Wall Hooks Combo</h1>
   </header>
+
   <div class="container">
+    <!-- Carousel -->
     <div class="carousel">
-      <img src="images/hook.png" alt="Wall Hook Image 1">
-      <img src="images/hook1.jpg" alt="Wall Hook Image 2">
-      <img src="images/hook3.jpg" alt="Wall Hook Image 3">
-    </div><div class="info-bar">
-  <strong>Pack:</strong> 10 Wall Hooks + 10 Screw Hooks <span class="highlight">Best Seller</span><br>
-  ✅ Strong grip • ✅ Reusable • ✅ No drilling required
-</div>
+      <img src="images/hook.png" alt="Wall Hook Image 1" />
+      <img src="images/hook1.jpg" alt="Wall Hook Image 2" />
+      <img src="images/hook3.jpg" alt="Wall Hook Image 3" />
+    </div>
 
-<p class="price">₹75 Prepaid <span class="savings">(Save ₹24)</span></p>
-<p>Or ₹99 <strong>Cash on Delivery</strong></p>
-<p><strong>🕒 Hurry!</strong> Limited stock left – order now.</p>
-    <!-- Netlify hidden form for backend recognition -->
-<form name="netflix-order" method="POST" netlify enctype="multipart/form-data" data-netlify="true">
-  <input type="text" name="name" placeholder="🧍 Full Name" required>
-  <input type="tel" name="phone" placeholder="📞 Phone Number" required>
-  <input type="text" name="address" placeholder="🏠 Full Address" required>
-  
-  <select name="payment" id="payment-method" onchange="toggleScreenshotField()">
-    <option value="Prepaid">Prepaid - ₹75</option>
-    <option value="COD">Cash on Delivery - ₹99</option>
-  </select>
-  
-  <div id="screenshot-field">
-    <label>Upload Screenshot of UPI Payment:</label>
-    <input type="file" name="payment_screenshot" accept="image/*">
+    <div class="info-bar">
+      <strong>Pack:</strong> 10 Wall Hooks + 10 Screw Hooks <span class="highlight">Best Seller</span><br>
+      ✅ Strong grip • ✅ Reusable • ✅ No drilling required
+    </div>
+
+    <p class="price">₹75 Prepaid <span class="savings">(Save ₹24)</span></p>
+    <p>Or ₹99 <strong>Cash on Delivery</strong></p>
+    <p><strong>🕒 Hurry!</strong> Limited stock left – order now.</p>
+
+    <!-- ✅ Hidden Netlify Form (needed for backend setup) -->
+    <form name="netflix-order" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name">
+      <input type="tel" name="phone">
+      <input type="text" name="address">
+      <input type="text" name="payment">
+      <input type="file" name="payment_screenshot">
+      <input type="text" name="notes">
+    </form>
+
+    <!-- ✅ Visible User Form -->
+    <form name="netflix-order" method="POST" data-netlify="true" enctype="multipart/form-data">
+      <input type="hidden" name="form-name" value="netflix-order">
+
+      <input type="text" name="name" placeholder="🧍 Full Name" required>
+      <input type="tel" name="phone" placeholder="📞 Phone Number" required>
+      <input type="text" name="address" placeholder="🏠 Full Address" required>
+
+      <select name="payment" id="payment-method" onchange="toggleScreenshotField()">
+        <option value="Prepaid">Prepaid - ₹75</option>
+        <option value="COD">Cash on Delivery - ₹99</option>
+      </select>
+
+      <div id="screenshot-field">
+        <label>Upload Screenshot of UPI Payment:</label>
+        <input type="file" name="payment_screenshot" accept="image/*">
+      </div>
+
+      <textarea name="notes" placeholder="📝 Any special request (optional)"></textarea>
+
+      <button class="btn" type="submit">Place My Order</button>
+    </form>
+
+    <div class="trust-badges">
+      <span>🔒 100% Secure Payments</span>
+      <span>🚚 5-7 Days Delivery</span>
+      <span>🇮🇳 Made in India</span>
+    </div>
+
+    <p>📲 For queries, WhatsApp us: <a href="https://wa.me/91XXXXXXXXXX">Click Here</a></p>
+    <p>Follow us on Instagram: <a href="https://instagram.com/trendkartindia18">@trendkartindia18</a></p>
   </div>
-  
-  <textarea name="notes" placeholder="📝 Any special request (optional)"></textarea>
-  
-  <!-- Hidden input to help Netlify identify this form -->
-  <input type="hidden" name="form-name" value="netflix-order">
-  
-  <button class="btn" type="submit">Place My Order</button>
-</form>
-<script>
-  function toggleScreenshotField() {
-    const method = document.getElementById("payment-method").value;
-    const screenshotDiv = document.getElementById("screenshot-field");
-    screenshotDiv.style.display = method === "Prepaid" ? "block" : "none";
-  }
-</script>
 
-<div class="trust-badges">
-  <span>🔒 100% Secure Payments</span>
-  <span>🚚 5-7 Days Delivery</span>
-  <span>🇮🇳 Made in India</span>
-</div>
-
-<p>📲 For queries, WhatsApp us: <a href="https://wa.me/91XXXXXXXXXX">Click Here</a></p>
-<p>Follow us on Instagram: <a href="https://instagram.com/trendkartindia18">@trendkartindia18</a></p>
-
-  </div>  <div class="sticky-btn" onclick="document.querySelector('form').scrollIntoView({ behavior: 'smooth' })">
+  <!-- Sticky Button -->
+  <div class="sticky-btn" onclick="document.querySelector('form').scrollIntoView({ behavior: 'smooth' })">
     🔥 Order Now @ ₹75
-  </div>  <footer>
+  </div>
+
+  <footer>
     &copy; 2025 TrendKart. All rights reserved.
-  </footer>  <script>
+  </footer>
+
+  <!-- Script to toggle UPI screenshot field -->
+  <script>
     function toggleScreenshotField() {
       const paymentMethod = document.getElementById('payment-method').value;
       const screenshotField = document.getElementById('screenshot-field');
-      if (paymentMethod === 'Prepaid') {
-        screenshotField.style.display = 'block';
-      } else {
-        screenshotField.style.display = 'none';
-      }
+      screenshotField.style.display = paymentMethod === 'Prepaid' ? 'block' : 'none';
     }
     window.onload = toggleScreenshotField;
-  </script></body>
+  </script>
+</body>
 </html>
